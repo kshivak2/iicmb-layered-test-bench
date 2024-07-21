@@ -1,0 +1,1 @@
+/mnt/apps/public/COE/mg_apps/questa2023.4/questasim/linux/../linux_x86_64/VisualizerRls/bin/viscom -nolock -quiet -jmem_size 18432288 -msglimit error -msglimitcount 20 -debug,livesim +designfile+design.bin top -work qrun.out/work -o qrun_opt +__design_bin_path+/mnt/ncsudrive/k/kshivak2/745_projects/project_benches/proj_3/project_benches/sim

@@ -1,0 +1,803 @@
+QuestaSim qrun 2023.4 Utility 2023.10 Oct  9 2023
+Start time: 17:20:47 on Apr 04,2024
+qrun -64 -gui -visualizer -onfinish stop -classdebug -uvmcontrol=all -msgmode both -permit_unmatched_virtual_intf -l run.log -f lab1_filelist.f -sv_seed 123456 -msglimit error -msglimitcount 20 -do "set IterationLimit 140000; set NoQuitOnFinish 1; coverage attribute -name TESTNAME -value test_top; coverage save -onexit test_top.ucdb; do wave.do" -debug,livesim -qwavedb=+signal+memory=1024+report+parameter+class+assertion+uvm_schematic+msg+classmemory=1024+statictaskfunc -top top -covermultiuserenv -designfile design.bin 
+QuestaSim-64 vlog 2023.4 Compiler 2023.10 Oct  9 2023
+Start time: 17:20:47 on Apr 04,2024
+vlog -msglimit error -msglimitcount 20 -covermultiuserenv ../../verification_ip/ncsu_pkg/ncsu_pkg.sv ../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv ../../verification_ip/interface_packages/wb_pkg/src/wb_if.sv ../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv ../../verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv ../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv ../testbench/top.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr -csessionid=0 
+-- Skipping ../../verification_ip/ncsu_pkg/ncsu_pkg.sv
+-- Skipping ../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv
+-- Skipping ../../verification_ip/interface_packages/wb_pkg/src/wb_if.sv
+-- Skipping ../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv
+-- Skipping ../../verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv
+-- Compiling package i2cmb_env_pkg
+-- Importing package ncsu_pkg
+-- Importing package wb_pkg
+-- Importing package i2c_pkg
+-- Importing package i2c_macros
+** Warning: ../testbench/top.sv(140): (vlog-2643) Unterminated string literal continues onto next line.
+-- Compiling package top_sv_unit
+-- Importing package i2cmb_env_pkg
+-- Compiling module top
+
+Top level modules:
+	top
+End time: 17:20:48 on Apr 04,2024, Elapsed time: 0:00:01
+Errors: 0, Warnings: 1
+-- Skipping 'vcom -64 -msglimit error -msglimitcount 20 -covermultiuseren...'
+QuestaSim-64 vopt 2023.4 Compiler 2023.10 Oct  9 2023
+Start time: 17:20:49 on Apr 04,2024
+vopt -msglimit error -msglimitcount 20 -debug,livesim -designfile design.bin top -work qrun.out/work -statslog qrun.out/stats_log -o qrun_opt -csession=incr -csessionid=2 
+
+Top level modules:
+	top
+
+Analyzing design...
+-- Loading module top
+-- Loading interface wb_if
+-- Loading interface i2c_if
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading entity iicmb_m_wb
+-- Loading architecture str of iicmb_m_wb
+-- Loading entity wishbone
+-- Loading package NUMERIC_STD
+-- Loading package iicmb_pkg
+-- Loading entity regblock
+-- Loading package iicmb_int_pkg
+-- Loading entity iicmb_m
+-- Loading architecture rtl of wishbone
+-- Loading architecture rtl of regblock
+-- Loading package body iicmb_pkg
+-- Loading architecture str of iicmb_m
+-- Loading entity mbyte
+-- Loading entity mbit
+-- Loading entity conditioner_mux
+-- Loading package body iicmb_int_pkg
+-- Loading architecture rtl of mbyte
+-- Loading architecture rtl of mbit
+-- Loading architecture str of conditioner_mux
+-- Loading entity conditioner
+-- Loading architecture str of conditioner
+-- Loading entity filter
+-- Loading entity bus_state
+-- Loading architecture rtl of filter
+-- Loading architecture rtl of bus_state
+Incremental compilation check found 23 design-units (out of 26) may be reused.
+Optimizing 3 design-units (inlining 2/3 module instances, 9/11 architecture instances):
+-- Optimizing package i2cmb_env_pkg(fast)
+-- Optimizing package top_sv_unit(fast)
+-- Inlining interface wb_if(fast__2)
+-- Inlining interface i2c_if(fast__2)
+-- Optimizing module top(fast)
+viscom:
+VISCOM: Start time: 17:20:51 on Apr 04,2024
+
+VISCOM: QuestaSim /mnt/apps/public/COE/mg_apps/questa2023.4/questasim/linux/../linux_x86_64/VisualizerRls/bin/viscom 2023.4 at 2023.10 Oct  9 2023
+VISCOM: Writing design.bin
+VISCOM: Done writing design.bin
+VISCOM: End time: 17:20:52 on Apr 04,2024, Elapsed time: 0:00:01 (Process Size : 380MB, Peak Process Size : 382MB)
+
+
+Optimized design name is qrun_opt
+End time: 17:20:53 on Apr 04,2024, Elapsed time: 0:00:04
+Errors: 0, Warnings: 0
+# VISUALIZERROOT = '/mnt/apps/public/COE/mg_apps/questa2023.4/questasim/linux_x86_64/VisualizerRls'
+# USER = 'kshivak2'
+# Mentor Graphics software version 2023.4 (Build on Oct  9 2023)
+# Copyright (C) 1999-2024 by Mentor Graphics All rights reserved.
+
+# vsim -64 -onfinish stop -classdebug -uvmcontrol=all -msgmode both -permit_unmatched_virtual_intf -sv_seed 123456 -msglimit error -msglimitcount 20 -qwavedb=+signal+memory=1024+report+parameter+class+assertion+uvm_schematic+msg+classmemory=1024+statictaskfunc -lib qrun.out/work -visualizer=design.bin -do {set IterationLimit 140000; set NoQuitOnFinish 1; coverage attribute -name TESTNAME -value test_top; coverage save -onexit test_top.ucdb; do wave.do} -statslog qrun.out/stats_log qrun_opt -appendlog -l run.log -csession=incr -csessionid=3
+# vsim -64 -onfinish stop -classdebug -uvmcontrol=all -msgmode both -permit_unmatched_virtual_intf -sv_seed 123456 -msglimit error -msglimitcount 20 -qwavedb=+livesim+signal+memory=1024+report+parameter+class+assertion+uvm_schematic+msg+classmemory=1024+statictaskfunc -lib qrun.out/work -visualizer=design.bin -statslog qrun.out/stats_log qrun_opt -appendlog -csession=incr -csessionid=3 "+no_qwavedb_threading" 
+# Start time: 17:21:29 on Apr 04,2024
+# Loading Mentor Graphics Visualizer shared object '/mnt/apps/public/COE/mg_apps/questa2023.4/questasim/bin/../linux_x86_64/VisualizerRls/bin/libqvisualizer.so'
+
+# Initiating qwavedb class logging
+
+
+# Done initiating qwavedb class logging
+# //  Questa Sim-64
+# //  Version 2023.4 linux_x86_64 Oct  9 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.i2c_macros(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.wb_if(fast)
+# Loading work.i2c_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.iicmb_pkg(body)
+# Loading work.iicmb_m_wb(str)#1
+# Loading work.iicmb_int_pkg(body)
+# Loading work.iicmb_m(str)#1
+
+# 17:21:36: Loading design data...
+# 17:21:36: Loaded  design units
+# 17:21:36: Loaded  design hierarchy
+# Warning: The wave file cannot be loaded because either the simulation has not yet logged any data, or qwavedb logging has not been enabled.
+# set IterationLimit 140000
+# 140000
+# set NoQuitOnFinish 1
+# 1
+# coverage attribute -name TESTNAME -value test_top
+
+# coverage save -onexit test_top.ucdb
+
+# do wave.do
+# 17:21:43: Loading waveform header...
+# 17:21:43: Loaded  waveform header
+#   Error: Unable to wave top.p0_bus.clk.
+#   Error: Unable to wave top.p0_bus.sop.
+#   Error: Unable to wave top.p0_bus.eop.
+#   Error: Unable to wave top.p0_bus.data.
+#   Error: Unable to wave top.p1_bus.clk.
+#   Error: Unable to wave top.p1_bus.sop.
+#   Error: Unable to wave top.p1_bus.eop.
+#   Error: Unable to wave top.p1_bus.data.
+# 
+# *****************************************************************
+#    Using QuickLZ compression software.
+# *****************************************************************
+# 
+# Static tasks and functions will be logged.
+# Qwave threading will not be used.
+# 	Arrays of 1 unpacked dimension inside classes will be logged if they have 1024 or fewer elements
+# qwavedb_dumpvars: Initiating qwavedb class logging
+# 
+# 	Loading class filter file '/mnt/apps/public/COE/mg_apps/questa2023.4/questasim/bin/../linux_x86_64/VisualizerRls/bin/../config/uvmclassfilter.txt'
+# 
+# qwavedb_dumpvars: Done initiating qwavedb class logging
+# Mentor Graphics software version 2023.4 (Build number 0)
+# Copyright (C) 1999-2024 by Mentor Graphics All rights reserved.
+# 	 Class Filter File used = /mnt/apps/public/COE/mg_apps/questa2023.4/questasim/bin/../linux_x86_64/VisualizerRls/bin/../config/uvmclassfilter.txt
+# qwavedb_dumpvars: Initiating qwavedb waveform capturing
+# 
+# 	Arrays of 1 unpacked dimension will be logged if they have 1024 or fewer elements
+# QWAVEDB:  logging of additional nested aggregates (UPA of UPS of UPA) is enabled.
+# 
+# qwavedb_dumpvars: Done initiating qwavedb waveform capturing
+# 
+# Note (Q2V): The "configure" command is ignored in Visualizer.
+
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of test.env.wishbone_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of test.env.wishbone_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of test.env.I2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of test.env.I2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of test.env.predictor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of test.env.scoreboard called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of test.env.coverage called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of test.gen called
+# Write Transfer:
+# data :   0
+# ***********************************************************************
+# Write Transfer:
+# data :   1
+# ***********************************************************************
+# Write Transfer:
+# data :   2
+# ***********************************************************************
+# Write Transfer:
+# data :   3
+# ***********************************************************************
+# Write Transfer:
+# data :   4
+# ***********************************************************************
+# Write Transfer:
+# data :   5
+# ***********************************************************************
+# Write Transfer:
+# data :   6
+# ***********************************************************************
+# Write Transfer:
+# data :   7
+# ***********************************************************************
+# Write Transfer:
+# data :   8
+# ***********************************************************************
+# Write Transfer:
+# data :   9
+# ***********************************************************************
+# Write Transfer:
+# data :  10
+# ***********************************************************************
+# Write Transfer:
+# data :  11
+# ***********************************************************************
+# Write Transfer:
+# data :  12
+# ***********************************************************************
+# Write Transfer:
+# data :  13
+# ***********************************************************************
+# Write Transfer:
+# data :  14
+# ***********************************************************************
+# Write Transfer:
+# data :  15
+# ***********************************************************************
+# Write Transfer:
+# data :  16
+# ***********************************************************************
+# Write Transfer:
+# data :  17
+# ***********************************************************************
+# Write Transfer:
+# data :  18
+# ***********************************************************************
+# Write Transfer:
+# data :  19
+# ***********************************************************************
+# Write Transfer:
+# data :  20
+# ***********************************************************************
+# Write Transfer:
+# data :  21
+# ***********************************************************************
+# Write Transfer:
+# data :  22
+# ***********************************************************************
+# Write Transfer:
+# data :  23
+# ***********************************************************************
+# Write Transfer:
+# data :  24
+# ***********************************************************************
+# Write Transfer:
+# data :  25
+# ***********************************************************************
+# Write Transfer:
+# data :  26
+# ***********************************************************************
+# Write Transfer:
+# data :  27
+# ***********************************************************************
+# Write Transfer:
+# data :  28
+# ***********************************************************************
+# Write Transfer:
+# data :  29
+# ***********************************************************************
+# Write Transfer:
+# data :  30
+# ***********************************************************************
+# Write Transfer:
+# data :  31
+# ***********************************************************************
+# Read Transfer:
+# data : 100
+# ***********************************************************************
+# Read Transfer:
+# data : 101
+# ***********************************************************************
+# Read Transfer:
+# data : 102
+# ***********************************************************************
+# Read Transfer:
+# data : 103
+# ***********************************************************************
+# Read Transfer:
+# data : 104
+# ***********************************************************************
+# Read Transfer:
+# data : 105
+# ***********************************************************************
+# Read Transfer:
+# data : 106
+# ***********************************************************************
+# Read Transfer:
+# data : 107
+# ***********************************************************************
+# Read Transfer:
+# data : 108
+# ***********************************************************************
+# Read Transfer:
+# data : 109
+# ***********************************************************************
+# Read Transfer:
+# data : 110
+# ***********************************************************************
+# Read Transfer:
+# data : 111
+# ***********************************************************************
+# Read Transfer:
+# data : 112
+# ***********************************************************************
+# Read Transfer:
+# data : 113
+# ***********************************************************************
+# Read Transfer:
+# data : 114
+# ***********************************************************************
+# Read Transfer:
+# data : 115
+# ***********************************************************************
+# Read Transfer:
+# data : 116
+# ***********************************************************************
+# Read Transfer:
+# data : 117
+# ***********************************************************************
+# Read Transfer:
+# data : 118
+# ***********************************************************************
+# Read Transfer:
+# data : 119
+# ***********************************************************************
+# Read Transfer:
+# data : 120
+# ***********************************************************************
+# Read Transfer:
+# data : 121
+# ***********************************************************************
+# Read Transfer:
+# data : 122
+# ***********************************************************************
+# Read Transfer:
+# data : 123
+# ***********************************************************************
+# Read Transfer:
+# data : 124
+# ***********************************************************************
+# Read Transfer:
+# data : 125
+# ***********************************************************************
+# Read Transfer:
+# data : 126
+# ***********************************************************************
+# Read Transfer:
+# data : 127
+# ***********************************************************************
+# Read Transfer:
+# data : 128
+# ***********************************************************************
+# Read Transfer:
+# data : 129
+# ***********************************************************************
+# Read Transfer:
+# data : 130
+# ***********************************************************************
+# Read Transfer:
+# data : 131
+# ***********************************************************************
+# Write Transfer:
+# data :  64
+# ***********************************************************************
+# Read Transfer:
+# data :  63
+# ***********************************************************************
+# Write Transfer:
+# data :  65
+# ***********************************************************************
+# Read Transfer:
+# data :  62
+# ***********************************************************************
+# Write Transfer:
+# data :  66
+# ***********************************************************************
+# Read Transfer:
+# data :  61
+# ***********************************************************************
+# Write Transfer:
+# data :  67
+# ***********************************************************************
+# Read Transfer:
+# data :  60
+# ***********************************************************************
+# Write Transfer:
+# data :  68
+# ***********************************************************************
+# Read Transfer:
+# data :  59
+# ***********************************************************************
+# Write Transfer:
+# data :  69
+# ***********************************************************************
+# Read Transfer:
+# data :  58
+# ***********************************************************************
+# Write Transfer:
+# data :  70
+# ***********************************************************************
+# Read Transfer:
+# data :  57
+# ***********************************************************************
+# Write Transfer:
+# data :  71
+# ***********************************************************************
+# Read Transfer:
+# data :  56
+# ***********************************************************************
+# Write Transfer:
+# data :  72
+# ***********************************************************************
+# Read Transfer:
+# data :  55
+# ***********************************************************************
+# Write Transfer:
+# data :  73
+# ***********************************************************************
+# Read Transfer:
+# data :  54
+# ***********************************************************************
+# Write Transfer:
+# data :  74
+# ***********************************************************************
+# Read Transfer:
+# data :  53
+# ***********************************************************************
+# Write Transfer:
+# data :  75
+# ***********************************************************************
+# Read Transfer:
+# data :  52
+# ***********************************************************************
+# Write Transfer:
+# data :  76
+# ***********************************************************************
+# Read Transfer:
+# data :  51
+# ***********************************************************************
+# Write Transfer:
+# data :  77
+# ***********************************************************************
+# Read Transfer:
+# data :  50
+# ***********************************************************************
+# Write Transfer:
+# data :  78
+# ***********************************************************************
+# Read Transfer:
+# data :  49
+# ***********************************************************************
+# Write Transfer:
+# data :  79
+# ***********************************************************************
+# Read Transfer:
+# data :  48
+# ***********************************************************************
+# Write Transfer:
+# data :  80
+# ***********************************************************************
+# Read Transfer:
+# data :  47
+# ***********************************************************************
+# Write Transfer:
+# data :  81
+# ***********************************************************************
+# Read Transfer:
+# data :  46
+# ***********************************************************************
+# Write Transfer:
+# data :  82
+# ***********************************************************************
+# Read Transfer:
+# data :  45
+# ***********************************************************************
+# Write Transfer:
+# data :  83
+# ***********************************************************************
+# Read Transfer:
+# data :  44
+# ***********************************************************************
+# Write Transfer:
+# data :  84
+# ***********************************************************************
+# Read Transfer:
+# data :  43
+# ***********************************************************************
+# Write Transfer:
+# data :  85
+# ***********************************************************************
+# Read Transfer:
+# data :  42
+# ***********************************************************************
+# Write Transfer:
+# data :  86
+# ***********************************************************************
+# Read Transfer:
+# data :  41
+# ***********************************************************************
+# Write Transfer:
+# data :  87
+# ***********************************************************************
+# Read Transfer:
+# data :  40
+# ***********************************************************************
+# Write Transfer:
+# data :  88
+# ***********************************************************************
+# Read Transfer:
+# data :  39
+# ***********************************************************************
+# Write Transfer:
+# data :  89
+# ***********************************************************************
+# Read Transfer:
+# data :  38
+# ***********************************************************************
+# Write Transfer:
+# data :  90
+# ***********************************************************************
+# Read Transfer:
+# data :  37
+# ***********************************************************************
+# Write Transfer:
+# data :  91
+# ***********************************************************************
+# Read Transfer:
+# data :  36
+# ***********************************************************************
+# Write Transfer:
+# data :  92
+# ***********************************************************************
+# Read Transfer:
+# data :  35
+# ***********************************************************************
+# Write Transfer:
+# data :  93
+# ***********************************************************************
+# Read Transfer:
+# data :  34
+# ***********************************************************************
+# Write Transfer:
+# data :  94
+# ***********************************************************************
+# Read Transfer:
+# data :  33
+# ***********************************************************************
+# Write Transfer:
+# data :  95
+# ***********************************************************************
+# Read Transfer:
+# data :  32
+# ***********************************************************************
+# Write Transfer:
+# data :  96
+# ***********************************************************************
+# Read Transfer:
+# data :  31
+# ***********************************************************************
+# Write Transfer:
+# data :  97
+# ***********************************************************************
+# Read Transfer:
+# data :  30
+# ***********************************************************************
+# Write Transfer:
+# data :  98
+# ***********************************************************************
+# Read Transfer:
+# data :  29
+# ***********************************************************************
+# Write Transfer:
+# data :  99
+# ***********************************************************************
+# Read Transfer:
+# data :  28
+# ***********************************************************************
+# Write Transfer:
+# data : 100
+# ***********************************************************************
+# Read Transfer:
+# data :  27
+# ***********************************************************************
+# Write Transfer:
+# data : 101
+# ***********************************************************************
+# Read Transfer:
+# data :  26
+# ***********************************************************************
+# Write Transfer:
+# data : 102
+# ***********************************************************************
+# Read Transfer:
+# data :  25
+# ***********************************************************************
+# Write Transfer:
+# data : 103
+# ***********************************************************************
+# Read Transfer:
+# data :  24
+# ***********************************************************************
+# Write Transfer:
+# data : 104
+# ***********************************************************************
+# Read Transfer:
+# data :  23
+# ***********************************************************************
+# Write Transfer:
+# data : 105
+# ***********************************************************************
+# Read Transfer:
+# data :  22
+# ***********************************************************************
+# Write Transfer:
+# data : 106
+# ***********************************************************************
+# Read Transfer:
+# data :  21
+# ***********************************************************************
+# Write Transfer:
+# data : 107
+# ***********************************************************************
+# Read Transfer:
+# data :  20
+# ***********************************************************************
+# Write Transfer:
+# data : 108
+# ***********************************************************************
+# Read Transfer:
+# data :  19
+# ***********************************************************************
+# Write Transfer:
+# data : 109
+# ***********************************************************************
+# Read Transfer:
+# data :  18
+# ***********************************************************************
+# Write Transfer:
+# data : 110
+# ***********************************************************************
+# Read Transfer:
+# data :  17
+# ***********************************************************************
+# Write Transfer:
+# data : 111
+# ***********************************************************************
+# Read Transfer:
+# data :  16
+# ***********************************************************************
+# Write Transfer:
+# data : 112
+# ***********************************************************************
+# Read Transfer:
+# data :  15
+# ***********************************************************************
+# Write Transfer:
+# data : 113
+# ***********************************************************************
+# Read Transfer:
+# data :  14
+# ***********************************************************************
+# Write Transfer:
+# data : 114
+# ***********************************************************************
+# Read Transfer:
+# data :  13
+# ***********************************************************************
+# Write Transfer:
+# data : 115
+# ***********************************************************************
+# Read Transfer:
+# data :  12
+# ***********************************************************************
+# Write Transfer:
+# data : 116
+# ***********************************************************************
+# Read Transfer:
+# data :  11
+# ***********************************************************************
+# Write Transfer:
+# data : 117
+# ***********************************************************************
+# Read Transfer:
+# data :  10
+# ***********************************************************************
+# Write Transfer:
+# data : 118
+# ***********************************************************************
+# Read Transfer:
+# data :   9
+# ***********************************************************************
+# Write Transfer:
+# data : 119
+# ***********************************************************************
+# Read Transfer:
+# data :   8
+# ***********************************************************************
+# Write Transfer:
+# data : 120
+# ***********************************************************************
+# Read Transfer:
+# data :   7
+# ***********************************************************************
+# Write Transfer:
+# data : 121
+# ***********************************************************************
+# Read Transfer:
+# data :   6
+# ***********************************************************************
+# Write Transfer:
+# data : 122
+# ***********************************************************************
+# Read Transfer:
+# data :   5
+# ***********************************************************************
+# Write Transfer:
+# data : 123
+# ***********************************************************************
+# Read Transfer:
+# data :   4
+# ***********************************************************************
+# Write Transfer:
+# data : 124
+# ***********************************************************************
+# Read Transfer:
+# data :   3
+# ***********************************************************************
+# Write Transfer:
+# data : 125
+# ***********************************************************************
+# Read Transfer:
+# data :   2
+# ***********************************************************************
+# Write Transfer:
+# data : 126
+# ***********************************************************************
+# Read Transfer:
+# data :   1
+# ***********************************************************************
+# Write Transfer:
+# data : 127
+# ***********************************************************************
+# Read Transfer:
+# data :   0
+# ***********************************************************************
+# 
+# ***********************************************************************
+# END OF PROJECT 2
+# ***********************************************************************
+# ** Note: $finish    : ../testbench/top.sv(143)
+#    Time: 31468255 ns  Iteration: 0  Instance: .top
+# Stopped at ../testbench/top.sv line 143
+# Break in Module top at ../testbench/top.sv line 143
+# Window layout 'Default' saved in file: /mnt/ncsudrive/k/kshivak2/.visualizer/layout.xml
+# Saving coverage database on exit...
+# qwavedb_dumpvars : Simulation ending at [0 3146825500] 0
+# ========= Visualizer Dump Summary report =========
+# 	 #Design Ids       = 140
+# 	 #Assertion Ids    = 3
+# 	 #Class Ids        = 336 (Recycled = 0)
+# 	 #Message Ids      = 2
+# 	 #Total Ids        = 486
+# 	 #Swaps            = 15
+# 	  Id Memory        = 46.66 KB
+# 	  Swap Memory      = 50.00 MB
+# ========= End of Visualizer Dump Summary report =========
+# End time: 17:22:00 on Apr 04,2024, Elapsed time: 0:00:31
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   1
+#     vopt: Errors:   0, Warnings:   0
+#     vsim: Errors:   0, Warnings:   0
+#   Totals: Errors:   0, Warnings:   1
+# Start  : Thu 04 Apr 2024 05:20:59 PM EDT
+# End    : Thu 04 Apr 2024 05:22:00 PM EDT
+# VMSize : 1475768 kB
+# VMPeak : 1526476 kB
